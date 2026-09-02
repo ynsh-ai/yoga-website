@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/yogasite/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/yogasite/$1"
+    }
+  ]
+}
