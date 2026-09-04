@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Soft Halo -->
+  <circle cx="24" cy="24" r="22" fill="#FDF4DF" stroke="#D49522" stroke-width="1.2" opacity="0.75"/>
+  
+  <!-- Sacred Golden Prana Sun / Bindu -->
+  <circle cx="33" cy="11" r="3.2" fill="#D49522"/>
+  
+  <!-- Graceful Swan (Hans) - Head, S-Neck, Body & Plumage -->
+  <path d="M13.5 33.5C15.8 35.2 19.5 35.8 24.5 35C30.8 34 35.5 29.5 37.5 23.5C38.2 21.5 36.8 20.5 35.2 21.2C31.8 22.8 27.8 23.5 24 22.2C19.8 20.8 17.5 16.5 19.2 11.5C19.8 9.5 18.2 8.2 16.2 8.6C13.5 9.2 11.8 12.2 12.2 16C12.8 21.8 17.2 27.5 24.5 28.5C19 29.5 14.2 27.2 11.2 23.8C10.2 27.5 11.2 31.5 13.5 33.5Z" fill="#C85A32"/>
+  
+  <!-- Swan Inner Lotus Wing Petal -->
+  <path d="M22.5 25.2C26.5 24 30.5 21 33.5 16.2C30.5 18.5 26.5 20 22.5 19.8C19 19.8 16.5 18.2 15.2 16.8C15.5 20.8 18.5 24.2 22.5 25.2Z" fill="#D49522" opacity="0.95"/>
+  
+  <!-- Serene Ripple Water Line -->
+  <path d="M9 39C13 40.2 21 40.2 27 39.2C32 38.2 36 38.6 39 39.5" stroke="#1C2E24" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

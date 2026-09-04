@@ -1,76 +1,72 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   /* --------------------------------------------------------------------------
      1. Mobile Navigation Menu
      -------------------------------------------------------------------------- */
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.site-nav');
-  const menuText = menuToggle?.querySelector('.menu-text');
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".site-nav");
+  const menuText = menuToggle?.querySelector(".menu-text");
 
   function closeMenu() {
-    if (nav?.classList.contains('open')) {
-      nav.classList.remove('open');
-      menuToggle?.setAttribute('aria-expanded', 'false');
-      if (menuText) menuText.textContent = 'Menu';
+    if (nav?.classList.contains("open")) {
+      nav.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      if (menuText) menuText.textContent = "Menu";
     }
   }
 
   function toggleMenu() {
-    const isExpanded = menuToggle?.getAttribute('aria-expanded') === 'true';
+    const isExpanded = menuToggle?.getAttribute("aria-expanded") === "true";
     const nextState = !isExpanded;
     
-    nav?.classList.toggle('open', nextState);
-    menuToggle?.setAttribute('aria-expanded', String(nextState));
+    nav?.classList.toggle("open", nextState);
+    menuToggle?.setAttribute("aria-expanded", String(nextState));
     if (menuText) {
-      menuText.textContent = nextState ? 'Close' : 'Menu';
+      menuText.textContent = nextState ? "Close" : "Menu";
     }
   }
 
-  // Toggle button click
-  menuToggle?.addEventListener('click', (e) => {
+  menuToggle?.addEventListener("click", (e) => {
     e.stopPropagation();
     toggleMenu();
   });
 
-  // Close menu when clicking nav links
-  nav?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       closeMenu();
     });
   });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (nav?.classList.contains('open') && !nav.contains(e.target) && !menuToggle?.contains(e.target)) {
+  document.addEventListener("click", (e) => {
+    if (nav?.classList.contains("open") && !nav.contains(e.target) && !menuToggle?.contains(e.target)) {
       closeMenu();
     }
   });
 
-  // Close menu on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav?.classList.contains('open')) {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav?.classList.contains("open")) {
       closeMenu();
       menuToggle?.focus();
     }
   });
 
   /* --------------------------------------------------------------------------
-     2. Interactive WhatsApp Customizer Widget
+     2. Interactive WhatsApp Visual Tile Customizer (with Event Delegation)
      -------------------------------------------------------------------------- */
   const customizerState = {
-    format: '1-on-1 Private Sessions',
-    goal: 'Release Stress & Anxiety',
-    time: 'Morning (6:30 - 8:30 AM)',
-    phone: '919876543210'
+    format: "1-on-1 Private Sessions",
+    goal: "Weight Loss & Metabolic Toning",
+    time: "Morning (6:30 - 8:30 AM)",
+    phone: "917668467896"
   };
 
-  const previewEl = document.getElementById('whatsapp-preview-text');
-  const whatsappBtn = document.getElementById('customizer-whatsapp-btn');
+  const previewEl = document.getElementById("whatsapp-preview-text");
+  const whatsappBtn = document.getElementById("customizer-whatsapp-btn");
 
   function updateWhatsAppPreview() {
-    const message = `Namaste Hansika! I would love to join your ${customizerState.format}. My primary focus is to ${customizerState.goal}, and my preferred timing is ${customizerState.time}. Could you please share the details?`;
+    const message = `Namaste Hansika! I would love to join your ${customizerState.format}. My primary focus is ${customizerState.goal}, and my preferred timing is ${customizerState.time}. Could you please share the details?`;
     
     if (previewEl) {
-      previewEl.textContent = `"${message}"`;
+      previewEl.textContent = `\"${message}\"`;
     }
 
     if (whatsappBtn) {
@@ -79,57 +75,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function setupPillGroup(groupId, stateKey) {
+  function setupTileGroup(groupId, stateKey) {
     const container = document.getElementById(groupId);
     if (!container) return;
 
-    const pills = container.querySelectorAll('.pill');
-    pills.forEach((pill) => {
-      pill.addEventListener('click', () => {
-        pills.forEach((p) => p.classList.remove('active'));
-        pill.classList.add('active');
-        customizerState[stateKey] = pill.getAttribute('data-val') || pill.textContent.trim();
-        updateWhatsAppPreview();
-      });
+    container.addEventListener("click", (e) => {
+      const tile = e.target.closest(".tile-card, .pill");
+      if (!tile || !container.contains(tile)) return;
+
+      container.querySelectorAll(".tile-card, .pill").forEach((t) => t.classList.remove("active"));
+      tile.classList.add("active");
+      customizerState[stateKey] = tile.getAttribute("data-val") || tile.textContent.trim();
+      updateWhatsAppPreview();
     });
   }
 
-  setupPillGroup('format-options', 'format');
-  setupPillGroup('goal-options', 'goal');
-  setupPillGroup('time-options', 'time');
+  setupTileGroup("format-options", "format");
+  setupTileGroup("goal-options", "goal");
+  setupTileGroup("time-options", "time");
 
-  // Initialize preview on page load
+  // Run initial preview setup
   updateWhatsAppPreview();
 
   /* --------------------------------------------------------------------------
      3. Interactive FAQ Accordion
      -------------------------------------------------------------------------- */
-  const faqItems = document.querySelectorAll('.faq-item');
+  const faqItems = document.querySelectorAll(".faq-item");
 
   faqItems.forEach((item) => {
-    const trigger = item.querySelector('.faq-trigger');
-    const content = item.querySelector('.faq-content');
+    const trigger = item.querySelector(".faq-trigger");
+    const content = item.querySelector(".faq-content");
 
-    trigger?.addEventListener('click', () => {
-      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+    trigger?.addEventListener("click", () => {
+      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
       const willExpand = !isExpanded;
 
-      // Optional: Close other open FAQs for a clean accordion effect
       faqItems.forEach((otherItem) => {
         if (otherItem !== item) {
-          const otherTrigger = otherItem.querySelector('.faq-trigger');
-          const otherContent = otherItem.querySelector('.faq-content');
-          otherTrigger?.setAttribute('aria-expanded', 'false');
+          const otherTrigger = otherItem.querySelector(".faq-trigger");
+          const otherContent = otherItem.querySelector(".faq-content");
+          otherTrigger?.setAttribute("aria-expanded", "false");
           if (otherContent) otherContent.hidden = true;
         }
       });
 
-      trigger.setAttribute('aria-expanded', String(willExpand));
+      trigger.setAttribute("aria-expanded", String(willExpand));
       if (content) {
         content.hidden = !willExpand;
       }
     });
   });
 });
-
-
