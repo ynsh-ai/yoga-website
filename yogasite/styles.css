@@ -900,6 +900,11 @@ p {
   margin: 0 auto;
 }
 
+.specializations-section .cards {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1360px;
+}
+
 .card {
   padding: clamp(26px, 3.5vw, 38px);
   min-height: 360px;
@@ -992,6 +997,7 @@ p {
 .card-sage { background: #e3ede6; }
 .card-clay { background: #fae4dc; }
 .card-sun { background: #fdf1d6; }
+.card-tulsi { background: #e2ede5; }
 
 /* --------------------------------------------------------------------------
    SECTION 5: WhatsApp Customizer Widget
@@ -1429,11 +1435,12 @@ footer .brand-title {
   }
 
   .spec-grid,
+  .specializations-section .cards,
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .card:last-child {
+  .offerings .card:last-child {
     grid-column: span 2;
   }
 }
@@ -1718,6 +1725,10 @@ footer .brand-title {
 
 .tile-grid-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.tile-grid-5 {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .tile-grid-3 {
