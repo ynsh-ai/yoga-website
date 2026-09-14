@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     format: "1-on-1 Private Sessions",
     goal: "Weight Loss & Metabolic Toning",
     time: "Morning (6:30 - 8:30 AM)",
-    phone: "917668467896"
+    phone: "919286596103"
   };
 
   const previewEl = document.getElementById("whatsapp-preview-text");
