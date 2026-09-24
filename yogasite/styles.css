@@ -303,9 +303,10 @@ p {
 }
 
 .hans-logo-svg {
-  width: clamp(36px, 4vw, 44px);
-  height: clamp(36px, 4vw, 44px);
+  width: clamp(38px, 4.2vw, 46px);
+  height: clamp(38px, 4.2vw, 46px);
   display: block;
+  filter: drop-shadow(0 3px 10px rgba(225, 91, 50, 0.22));
 }
 
 .brand-text-group {
@@ -1274,6 +1275,20 @@ blockquote {
   justify-content: center;
   gap: 6px 14px;
   margin-top: 20px;
+}
+
+.contact-note a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+  transition: var(--transition);
+}
+
+.contact-note a:hover {
+  color: var(--terracotta);
+  text-decoration-color: var(--terracotta);
 }
 
 /* --------------------------------------------------------------------------

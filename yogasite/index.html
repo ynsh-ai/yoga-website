@@ -21,19 +21,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
     
-    <link rel="stylesheet" href="styles.css?v=11" />
+    <link rel="stylesheet" href="styles.css?v=12" />
   </head>
   <body>
     <!-- Site Header -->
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Yoga with Hansika Home">
         <span class="brand-logo-icon" aria-hidden="true">
-          <svg class="hans-logo-svg" viewBox="0 0 48 48" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#FDF4DF" stroke="#D49522" stroke-width="1.2" opacity="0.75"/>
-            <circle cx="33" cy="11" r="3.2" fill="#D49522"/>
-            <path d="M13.5 33.5C15.8 35.2 19.5 35.8 24.5 35C30.8 34 35.5 29.5 37.5 23.5C38.2 21.5 36.8 20.5 35.2 21.2C31.8 22.8 27.8 23.5 24 22.2C19.8 20.8 17.5 16.5 19.2 11.5C19.8 9.5 18.2 8.2 16.2 8.6C13.5 9.2 11.8 12.2 12.2 16C12.8 21.8 17.2 27.5 24.5 28.5C19 29.5 14.2 27.2 11.2 23.8C10.2 27.5 11.2 31.5 13.5 33.5Z" fill="#C85A32"/>
-            <path d="M22.5 25.2C26.5 24 30.5 21 33.5 16.2C30.5 18.5 26.5 20 22.5 19.8C19 19.8 16.5 18.2 15.2 16.8C15.5 20.8 18.5 24.2 22.5 25.2Z" fill="#D49522" opacity="0.95"/>
-            <path d="M9 39C13 40.2 21 40.2 27 39.2C32 38.2 36 38.6 39 39.5" stroke="#1C2E24" stroke-width="1.8" stroke-linecap="round"/>
+          <svg class="hans-logo-svg" viewBox="0 0 48 48" width="42" height="42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="haloGradHead" cx="30%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#FFF9E6"/>
+                <stop offset="45%" stop-color="#FFE7D6"/>
+                <stop offset="100%" stop-color="#E5F3EB"/>
+              </radialGradient>
+              <linearGradient id="ringGradHead" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F59E0B"/>
+                <stop offset="45%" stop-color="#E15B32"/>
+                <stop offset="100%" stop-color="#10B981"/>
+              </linearGradient>
+              <radialGradient id="sunGradHead" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#FFF59D"/>
+                <stop offset="35%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#EA580C"/>
+              </radialGradient>
+              <linearGradient id="swanBodyGradHead" x1="10" y1="10" x2="38" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FB923C"/>
+                <stop offset="40%" stop-color="#E14D2A"/>
+                <stop offset="100%" stop-color="#BE123C"/>
+              </linearGradient>
+              <linearGradient id="wingGradHead" x1="15" y1="16" x2="34" y2="26" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FEF08A"/>
+                <stop offset="45%" stop-color="#FBBF24"/>
+                <stop offset="100%" stop-color="#EA580C"/>
+              </linearGradient>
+              <linearGradient id="rippleGradHead" x1="9" y1="39" x2="39" y2="39" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="50%" stop-color="#059669"/>
+                <stop offset="100%" stop-color="#0F766E"/>
+              </linearGradient>
+            </defs>
+            <circle cx="24" cy="24" r="22" fill="url(#haloGradHead)" stroke="url(#ringGradHead)" stroke-width="1.6"/>
+            <circle cx="33" cy="11" r="3.8" fill="url(#sunGradHead)"/>
+            <circle cx="33" cy="11" r="1.4" fill="#FFFFFF" opacity="0.85"/>
+            <path d="M13.5 33.5C15.8 35.2 19.5 35.8 24.5 35C30.8 34 35.5 29.5 37.5 23.5C38.2 21.5 36.8 20.5 35.2 21.2C31.8 22.8 27.8 23.5 24 22.2C19.8 20.8 17.5 16.5 19.2 11.5C19.8 9.5 18.2 8.2 16.2 8.6C13.5 9.2 11.8 12.2 12.2 16C12.8 21.8 17.2 27.5 24.5 28.5C19 29.5 14.2 27.2 11.2 23.8C10.2 27.5 11.2 31.5 13.5 33.5Z" fill="url(#swanBodyGradHead)"/>
+            <path d="M22.5 25.2C26.5 24 30.5 21 33.5 16.2C30.5 18.5 26.5 20 22.5 19.8C19 19.8 16.5 18.2 15.2 16.8C15.5 20.8 18.5 24.2 22.5 25.2Z" fill="url(#wingGradHead)"/>
+            <path d="M9 39C13 40.2 21 40.2 27 39.2C32 38.2 36 38.6 39 39.5" stroke="url(#rippleGradHead)" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
         </span>
         <div class="brand-text-group">
@@ -553,9 +586,9 @@
         </div>
 
         <p class="contact-note">
-          <span>WhatsApp: +91 92865 96103</span> &nbsp;·&nbsp;
-          <span>hanshika.yoga@gmail.com</span> &nbsp;·&nbsp;
-          <span>Instagram: @hanshika.yoga</span> &nbsp;·&nbsp;
+          <span>WhatsApp: <a href="https://wa.me/919286596103" target="_blank" rel="noopener noreferrer">+91 92865 96103</a></span> &nbsp;·&nbsp;
+          <span><a href="mailto:hansika.yoga@gmail.com">hansika.yoga@gmail.com</a></span> &nbsp;·&nbsp;
+          <span>Instagram: <a href="https://instagram.com/yogawith_hansika" target="_blank" rel="noopener noreferrer">@yogawith_hansika</a></span> &nbsp;·&nbsp;
           <span>Online Classes (IST / Worldwide)</span>
         </p>
       </section>
@@ -565,12 +598,45 @@
     <footer>
       <a class="brand" href="#top" aria-label="Yoga with Hansika - Back to top">
         <span class="brand-logo-icon" aria-hidden="true">
-          <svg class="hans-logo-svg" viewBox="0 0 48 48" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="22" fill="#FDF4DF" stroke="#D49522" stroke-width="1.2" opacity="0.75"/>
-            <circle cx="33" cy="11" r="3.2" fill="#D49522"/>
-            <path d="M13.5 33.5C15.8 35.2 19.5 35.8 24.5 35C30.8 34 35.5 29.5 37.5 23.5C38.2 21.5 36.8 20.5 35.2 21.2C31.8 22.8 27.8 23.5 24 22.2C19.8 20.8 17.5 16.5 19.2 11.5C19.8 9.5 18.2 8.2 16.2 8.6C13.5 9.2 11.8 12.2 12.2 16C12.8 21.8 17.2 27.5 24.5 28.5C19 29.5 14.2 27.2 11.2 23.8C10.2 27.5 11.2 31.5 13.5 33.5Z" fill="#C85A32"/>
-            <path d="M22.5 25.2C26.5 24 30.5 21 33.5 16.2C30.5 18.5 26.5 20 22.5 19.8C19 19.8 16.5 18.2 15.2 16.8C15.5 20.8 18.5 24.2 22.5 25.2Z" fill="#D49522" opacity="0.95"/>
-            <path d="M9 39C13 40.2 21 40.2 27 39.2C32 38.2 36 38.6 39 39.5" stroke="#1C2E24" stroke-width="1.8" stroke-linecap="round"/>
+          <svg class="hans-logo-svg" viewBox="0 0 48 48" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="haloGradFoot" cx="30%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#FFF9E6"/>
+                <stop offset="45%" stop-color="#FFE7D6"/>
+                <stop offset="100%" stop-color="#E5F3EB"/>
+              </radialGradient>
+              <linearGradient id="ringGradFoot" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F59E0B"/>
+                <stop offset="45%" stop-color="#E15B32"/>
+                <stop offset="100%" stop-color="#10B981"/>
+              </linearGradient>
+              <radialGradient id="sunGradFoot" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#FFF59D"/>
+                <stop offset="35%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#EA580C"/>
+              </radialGradient>
+              <linearGradient id="swanBodyGradFoot" x1="10" y1="10" x2="38" y2="36" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FB923C"/>
+                <stop offset="40%" stop-color="#E14D2A"/>
+                <stop offset="100%" stop-color="#BE123C"/>
+              </linearGradient>
+              <linearGradient id="wingGradFoot" x1="15" y1="16" x2="34" y2="26" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#FEF08A"/>
+                <stop offset="45%" stop-color="#FBBF24"/>
+                <stop offset="100%" stop-color="#EA580C"/>
+              </linearGradient>
+              <linearGradient id="rippleGradFoot" x1="9" y1="39" x2="39" y2="39" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="50%" stop-color="#059669"/>
+                <stop offset="100%" stop-color="#0F766E"/>
+              </linearGradient>
+            </defs>
+            <circle cx="24" cy="24" r="22" fill="url(#haloGradFoot)" stroke="url(#ringGradFoot)" stroke-width="1.6"/>
+            <circle cx="33" cy="11" r="3.8" fill="url(#sunGradFoot)"/>
+            <circle cx="33" cy="11" r="1.4" fill="#FFFFFF" opacity="0.85"/>
+            <path d="M13.5 33.5C15.8 35.2 19.5 35.8 24.5 35C30.8 34 35.5 29.5 37.5 23.5C38.2 21.5 36.8 20.5 35.2 21.2C31.8 22.8 27.8 23.5 24 22.2C19.8 20.8 17.5 16.5 19.2 11.5C19.8 9.5 18.2 8.2 16.2 8.6C13.5 9.2 11.8 12.2 12.2 16C12.8 21.8 17.2 27.5 24.5 28.5C19 29.5 14.2 27.2 11.2 23.8C10.2 27.5 11.2 31.5 13.5 33.5Z" fill="url(#swanBodyGradFoot)"/>
+            <path d="M22.5 25.2C26.5 24 30.5 21 33.5 16.2C30.5 18.5 26.5 20 22.5 19.8C19 19.8 16.5 18.2 15.2 16.8C15.5 20.8 18.5 24.2 22.5 25.2Z" fill="url(#wingGradFoot)"/>
+            <path d="M9 39C13 40.2 21 40.2 27 39.2C32 38.2 36 38.6 39 39.5" stroke="url(#rippleGradFoot)" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
         </span>
         <div class="brand-text-group">
@@ -588,7 +654,7 @@
         class="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Hanshika Rajput on WhatsApp"
+        aria-label="Chat with Hansika Rajput on WhatsApp"
       >
         <span class="whatsapp-tooltip">Chat with Hansika</span>
         <span class="whatsapp-pulse" aria-hidden="true"></span>
@@ -600,6 +666,6 @@
       </a>
     </aside>
 
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=9"></script>
   </body>
 </html>
